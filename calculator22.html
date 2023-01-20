@@ -1,0 +1,79 @@
+<html>
+<head>
+<title> Calculator</title>
+<style>
+button
+{
+ background-color:red;
+ width:50px;
+border:2px solid yellow
+}
+button:hover
+{
+ background-color:blue;
+}
+input
+{
+ background-color:green;
+border:2px solid black;
+}
+</style>
+</head>
+<body>
+<script>
+function view(num)
+  {
+   document.getElementById("result").value+=num;
+}
+function compute()
+ {
+   let x = document.getElementById("result").value;
+ let y = eval(x)
+ document.getElementById("result").value = y;
+}
+function clr()
+  {
+   document.getElementById("result").value =" ";
+}
+function back() {
+    var value = document.getElementById("result").value;
+    document.getElementById("result").value = value.substr(0, value.length - 1);
+}
+
+</script>
+<table border=1px align="center"style= "background-color:pink">
+
+<tr>
+<td colspan=3> <input type="text" id="result"></input></td>
+<td ><button type="button" onclick="clr()">C</td>
+<td ><button type="button" onclick="back()">b</td>
+</tr>
+
+<tr align="center">
+<td><button type="button" onclick="view('1')">1</button></td>
+<td><button type="button" onclick="view('2')">2</button></td>
+<td><button type="button" onclick="view('3')">3</button></td>
+<td><button type="button" onclick="view('+')">+</button></td>
+</tr>
+
+<tr align="center">
+<td><button type="button" onclick="view('4')">4</button></td>
+<td><button type="button" onclick="view('5')">5</button></td>
+<td><button type="button" onclick="view('6')">6</button></td>
+<td><button type="button" onclick="view('-')">-</button></td>
+</tr>
+
+<tr align="center">
+<td><button type="button" onclick="view('7')">7</button></td>
+<td><button type="button" onclick="view('8')">8</button></td>
+<td><button type="button" onclick="view('9')">9</button></td>
+<td><button type="button" onclick="view('/')">/</button></td>
+
+</tr>
+<tr align="center">
+<td><button type="button" onclick="view('*')">*</button></td>
+<td><button type="button" onclick="view('0')">0</button></td>
+<td><button type="button" onclick="view('.')">.</button></td>
+<td><button type="button" onclick="compute()">=</button></td></tr>
+</body>
+</html> 
