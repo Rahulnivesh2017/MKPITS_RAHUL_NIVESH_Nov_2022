@@ -1,18 +1,15 @@
 
-class Demo{
 
-int a=10;
-String b="Ankush";
+// Performing single task to single thread (Thread class)
 
-void show()
-{
-System.out.println(a+" "+b);
-}
-}
+public class Test implements Runnable{
 
-class test{
-public static void main(String []args){
-Demo sc=new Demo();
-sc.show();
-}
+    public void run(){
+        System.out.println("thread task");
+    }
+    public static void main(String[] args){
+        Test t=new Test();
+        Thread th=new Thread(t);
+        th.start();
+    }
 }
